@@ -14,11 +14,26 @@ body {
   
 
   .flip-card {
-    background-color:  peachpuff;
-    width:30vw;
+    background-color:  transparent;
+    width:50vw;
     height: 80vh;
     perspective: 1000px;
+   
   }
+
+
+
+  @media screen and (max-width:844px)  {
+    .flip-card {
+      background-color:  transparent;
+      width:90%;
+      height: 90vh;
+      perspective: 1000px;
+    }
+  }
+
+
+
   #btn-main{
     display: flex;
     margin-bottom: 20px;
@@ -43,7 +58,8 @@ body {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+    
   }
   
   .flip-card.flip .flip-card-inner {
@@ -56,6 +72,15 @@ body {
     height: 80vh;
   }
   
+  @media screen and (max-width:844px)  {
+    .flip-card.flip {
+     
+      width:90%;
+      height: 90vh;
+    
+    }
+  }
+
   
   .flip-card-front, .flip-card-back {
     position: absolute;
@@ -68,9 +93,9 @@ body {
   .flip-card-front {
     background-image:url(./bg.jpg);
     background-position: center;
-    background-size: contain;
+    background-size:contain;
     background-repeat: no-repeat;
-    box-shadow: 2px  -2px 2px peachpuff ,1px -1px 1px  peachpuff,2px -2px  2px  peachpuff,3px -3px  3px  peachpuff,4px -4px 4px  peachpuff;
+
     color: black;
   }
   
