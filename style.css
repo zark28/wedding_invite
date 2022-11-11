@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+
+  .flip-card {
+    background-color:  peachpuff;
+    width:30vw;
+    height: 80vh;
+    perspective: 1000px;
+  }
+  #btn-main{
+    display: flex;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    animation: bounce 2s infinite forwards;
+  }
+  @keyframes bounce {
+    0%{
+      transform:scale(1) ;
+    }
+    100%{
+      transform:scale(1.5) ;
+    }
+    
+  }
+ 
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card.flip .flip-card-inner {
+    transform: rotateY(180deg);
+  
+
+  }
+  .flip-card.flip{
+    width:600px;
+    height: 80vh;
+  }
+  
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-image:url(./bg.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 2px  -2px 2px peachpuff ,1px -1px 1px  peachpuff,2px -2px  2px  peachpuff,3px -3px  3px  peachpuff,4px -4px 4px  peachpuff;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: transparent;
+    color: rgb(133, 147, 146);
+    transform: rotateY(180deg);
+  }
